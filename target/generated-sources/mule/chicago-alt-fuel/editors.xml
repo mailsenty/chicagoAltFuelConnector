@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<namespace xmlns="http://www.mulesoft.org/schema/mule/tooling.attributes" xmlns:mule="http://www.mulesoft.org/schema/mule/core" url="http://www.mulesoft.org/schema/mule/chicago-alt-fuel" prefix="chicago-alt-fuel">
+  <global-cloud-connector versions="[3.5.0,8.0.0]" caption="ChicagoAltFuel" description="" icon="" localId="parentConfig" image="" abstract="true" extends="http://www.mulesoft.org/schema/mule/chicago-alt-fuel/abstractChicago-alt-fuelConnectorGeneric"></global-cloud-connector>
+  <global-cloud-connector versions="[3.5.0,8.0.0]" caption="ChicagoAltFuel: Configuration" description="Global Configuration configuration information." icon="icons/theme.classic/chicago-alt-fuel-connector-small.png" localId="config" image="icons/theme.classic/chicago-alt-fuel-connector-large.png" abstract="false" extends="http://www.mulesoft.org/schema/mule/chicago-alt-fuel/parentConfig" connectivityTesting="off" metaData="static" metaDataKeyDisplay="DISPLAY_NAME" supportsUserDefinedMetaData="false">
+    <attribute-category caption="General" description="Chicago-alt-fuel configuration properties.">
+      <group id="chicago-alt-fuelGenericProperties" caption="Basic Settings">
+        <name name="name" caption="Name" description="Give a name to this configuration so it can be later referenced by config-ref." required="true"></name>
+      </group>
+      <group id="general" caption="General">
+        <string defaultValue="Hello" name="greeting" caption="Greeting" description="Greeting message." supportsExpressions="false" required="false" javaType="java.lang.String"></string>
+        <string defaultValue="How are you?" name="reply" caption="Reply" description="Reply message." supportsExpressions="false" required="false" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </global-cloud-connector>
+  <cloud-connector caption="Abstractchicago-alt-fuelconnectorgeneric" description="Interact with Chicago-alt-fuel." icon="icons/theme.classic/chicago-alt-fuel-connector-small.png" localId="abstractChicago-alt-fuelConnectorGeneric" image="icons/theme.classic/chicago-alt-fuel-connector-large.png" abstract="true">
+    <attribute-category caption="General" description="General.">
+      <group id="abstractChicago-alt-fuelConnectorGeneric" caption="Basic Settings">
+        <globalRef requiredType="http://www.mulesoft.org/schema/mule/chicago-alt-fuel/config" name="config-ref" caption="Connector Configuration" description="Specify which configuration to use for this invocation." required="true"></globalRef>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector versions="[3.5.0,8.0.0]" aliasId="org.mule.tooling.ui.modules.core.pattern.chicago-alt-fuel" caption="ChicagoAltFuel" description="" icon="icons/theme.classic/chicago-alt-fuel-connector-small.png" localId="chicago-alt-fuel-connector" image="icons/theme.classic/chicago-alt-fuel-connector-large.png" extends="http://www.mulesoft.org/schema/mule/chicago-alt-fuel/abstractChicago-alt-fuelConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="chicago-alt-fuelConnectorGeneric" caption="Basic Settings">
+        <modeSwitch alwaysCombo="true" name="Chicago-alt-fuel operations to execute" caption="Operation" description="Operation.">
+          <no-operation abstractElement="http://www.mulesoft.org/schema/mule/chicago-alt-fuel/abstractChicago-alt-fuelConnectorGeneric" versions="[3.5.0,8.0.0]" connector-name="processor"></no-operation>
+          <mode modeId="http://www.mulesoft.org/schema/mule/chicago-alt-fuel/find-on-fuel-type" modeLabel="Find on fuel type"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/chicago-alt-fuel/find-on-lattitude" modeLabel="Find on lattitude"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/chicago-alt-fuel/find-on-long" modeLabel="Find on long"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/chicago-alt-fuel/find-on-zip" modeLabel="Find on zip"></mode>
+        </modeSwitch>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.lang.String" caption="Find On Fuel Type" icon="icons/theme.classic/chicago-alt-fuel-connector-small.png" localId="find-on-fuel-type" image="icons/theme.classic/chicago-alt-fuel-connector-large.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/chicago-alt-fuel/abstractChicago-alt-fuelConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="fuel_type_code" caption="Fuel_type_code" description="" required="true" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.lang.String" caption="Find On Lattitude" icon="icons/theme.classic/chicago-alt-fuel-connector-small.png" localId="find-on-lattitude" image="icons/theme.classic/chicago-alt-fuel-connector-large.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/chicago-alt-fuel/abstractChicago-alt-fuelConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="latitude" caption="Latitude" description="" required="true" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.lang.String" caption="Find On Long" icon="icons/theme.classic/chicago-alt-fuel-connector-small.png" localId="find-on-long" image="icons/theme.classic/chicago-alt-fuel-connector-large.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/chicago-alt-fuel/abstractChicago-alt-fuelConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="longitude" caption="Longitude" description="" required="true" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.lang.String" caption="Find On Zip" icon="icons/theme.classic/chicago-alt-fuel-connector-small.png" localId="find-on-zip" image="icons/theme.classic/chicago-alt-fuel-connector-large.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/chicago-alt-fuel/abstractChicago-alt-fuelConnectorGeneric" metaData="static">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string name="zip" caption="Zip" description="" required="true" javaType="java.lang.String"></string>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+</namespace>

@@ -1,0 +1,3 @@
+<!-- BEGIN_INCLUDE(chicago-alt-fuel:greet) -->
+    <chicago-alt-fuel:greet config-ref="" friend="#[map-payload:friend]" />
+<!-- END_INCLUDE(chicago-alt-fuel:greet) -->
